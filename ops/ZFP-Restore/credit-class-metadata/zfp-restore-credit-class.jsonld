@@ -1,0 +1,101 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "regen": "https://schema.regen.network#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "schema:itemListElement": {
+      "@container": "@list"
+    },
+    "regen:sectoralScope": {
+      "@container": "@list"
+    },
+    "regen:offsetGenerationMethod": {
+      "@container": "@list"
+    },
+    "regen:projectActivities": {
+      "@container": "@list"
+    },
+    "schema:url": {
+      "@type": "schema:URL"
+    },
+    "schema:image": {
+      "@type": "schema:URL"
+    },
+    "regen:certifications": {
+      "@container": "@list"
+    },
+    "regen:coBenefits": {
+      "@container": "@list"
+    },
+    "regen:SDGs": {
+      "@container": "@list"
+    }
+  },
+  "@type": "regen:ZFP-CreditClass",
+  "schema:description": "Restore Grant program aims to sequester soil carbon, in so doing provide climate resilience, improved nutrition, spur adoption of regenerative practices and increase awareness and demand for products of regenerative agriculture. The credit class outlines the stipulations for project eligibility, acceptance and execution of the grant.",
+  "schema:name": "Restore Grant Program",
+  "schema:url": "https://www.zerofoodprint.org/",
+  "schema:image": "https://github.com/farmOS/farmOS/assets/3116995/a3971356-179b-46be-bbc0-a4791f758626",
+  "regen:sourceRegistry": {
+    "schema:name": "Zero Food Print",
+    "schema:url": "https://www.zerofoodprint.org/"
+  },
+  "regen:sectoralScope": [
+    ""
+  ],
+  "regen:offsetGenerationMethod": [
+    "Modeled Sequestration"
+  ],
+  "regen:approvedMethodologies": {
+    "@type": "schema:ItemList",
+    "schema:itemListElement": [
+      {
+        "schema:name": "Restore Grant Program Guidelines",
+        "schema:url": "https://static1.squarespace.com/static/5e0fec48f3ccf3541b3601d8/t/64067847dcd5f66698174e69/1678145608210/Restore+Grant+Guidelines+03_2023.pdf",
+        "schema:identifier": "",
+        "schema:version": ""
+      }
+    ],
+    "schema:url": ""
+  },
+  "regen:projectActivities": [
+    ""
+  ],
+  "regen:coBenefits": [
+    {
+      "@id": "regen:SoilCarbonSequestration",
+      "@type": "regen:MeasuredCoBenefit",
+      "schema:name": "Soil Carbon Sequestration"
+    },
+    {
+      "@id": "regen:WaterHoldingCapacity",
+      "@type": "regen:MeasuredCoBenefit",
+      "schema:name": "Water Holding Capactiy"
+    },
+    {
+      "@id": "regen:ReduceExternalInput",
+      "@type": "regen:ProjectBenefit",
+      "schema:name": "Reductions in external inputs"
+    },
+    {
+      "@id": "regen:FoodNutrientDensity",
+      "@type": "regen:ProjectBenefit",
+      "schema:name": "Food Nutrient Density"
+    },
+    {
+      "@id": "regen:TransitionalRegenerativeAgriculture",
+      "@type": "regen:ProjectBenefit",
+      "schema:name": "Transition to Regenerative Agriculture"
+    },
+    {
+      "@id": "regen:SoilHealth",
+      "@type": "regen:ProjectBenefit",
+      "schema:name": "Soil Health"
+    },
+    {
+      "@id": "regen:EcosystemResilience",
+      "@type": "regen:ProjectBenefit",
+      "schema:name": "Ecosystem Resilience"
+    }
+  ]
+}

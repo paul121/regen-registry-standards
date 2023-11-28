@@ -1,0 +1,125 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix regen: <https://schema.regen.network#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix schema: <http://schema.org/> .
+
+regen:ZFP-Restore-Project rdfs:subClassOf regen:Project .
+
+# Anchored
+
+regen:ZFP-Restore-ProjectShape a sh:NodeShape ;
+  sh:targetClass regen:ZFP-Restore-Project ;
+
+  sh:property regen:ProjectStatusPropertyShape ;
+  sh:property regen:TechnicalAssistanceProviderPropertyShape ;
+  sh:property regen:ProjectValidationDocumentPropertyShape ;
+  sh:property regen:ProjectCometPlannerReportPropertyShape ;
+
+  sh:property [
+    sh:path regen:historicallyUnderservedProject ;
+    sh:node schema:Boolean ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:minLength 1 ;
+  ] ;
+
+  sh:property [
+    sh:path regen:sociallyDisadvantagedProject ;
+    sh:node schema:Boolean ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:minLength 1 ;
+  ] ;
+
+  sh:property regen:ProjectFunderPropertyShape ;
+
+  sh:property [
+    sh:path regen:projectTotalCO2 ;
+    sh:node regen:ProjectTotalShape ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:group regen:ProjectPageBasicInfoGroup ;
+  ] ;
+
+  sh:property [
+    sh:path regen:projectTotalCost ;
+    sh:node regen:ProjectTotalShape ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:group regen:ProjectPageBasicInfoGroup ;
+  ] ;
+.
+
+regen:ProjectTotalShape a sh:NodeShape ;
+  sh:property [
+    sh:path qudt:unit ;
+    sh:datatype qudt:Unit ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path qudt:numericValue ;
+    sh:minExclusive 0 ;
+    sh:datatype xsd:double ;
+    sh:maxCount 1 ;
+    sh:maxCount 1 ;
+    sh:group regen:ProjectPageBasicInfoGroup ;
+  ] ;
+.
+
+regen:ProjectFunderShape a sh:NodeShape ;
+  sh:property [
+    sh:path regen:funder ;
+    sh:node regen:ProjectRoleShape ;
+    sh:minCount 1 ;
+    sh:maxCount 4 ;
+  ] ;
+  sh:property [
+    sh:path qudt:unit ;
+    sh:datatype qudt:Unit ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path qudt:numericValue ;
+    sh:minExclusive 0 ;
+    sh:datatype xsd:double ;
+    sh:maxCount 1 ;
+    sh:maxCount 1 ;
+    sh:group regen:ProjectPageBasicInfoGroup ;
+  ] ;
+.
+
+regen:ProjectFunderPropertyShape sh:path regen:projectFunder ;
+  sh:node regen:ProjectFunderShape ;
+  sh:minCount 1 ;
+  sh:maxCount 4 ;
+  sh:group regen:ProjectPageBasicInfoGroup ;
+.
+
+regen:ProjectStatusPropertyShape sh:path regen:projectStatus ;
+  sh:datatype xsd:string ;
+  sh:in ( "In process" "Implementation" "Smapling complete" "Complete" ) ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:group regen:ProjectPageBasicInfoGroup ;
+.
+
+regen:TechnicalAssistanceProviderPropertyShape sh:path regen:technicalAssistanceProvider ;
+  sh:node regen:ProjectRoleShape ;
+  sh:maxCount 1 ;
+  sh:group regen:ProjectPageRolesGroup ;
+.
+
+regen:ProjectValidationDocumentPropertyShape sh:path regen:projectValidationDocument ;
+  sh:datatype schema:URL ;
+  sh:minCount 0 ;
+.
+
+regen:ProjectCometPlannerReportPropertyShape sh:path regen:projectCometPlannerReport ;
+  sh:datatype schema:URL ;
+  sh:minCount 0 ;
+.

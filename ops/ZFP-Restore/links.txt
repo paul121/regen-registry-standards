@@ -1,0 +1,7 @@
+landscape dark: https://github.com/farmOS/farmOS/assets/3116995/f5143efe-2b3d-4064-9e15-eea0ab43f1c0
+landscape oragne:  https://github.com/farmOS/farmOS/assets/3116995/a3971356-179b-46be-bbc0-a4791f758626
+mark light: https://github.com/farmOS/farmOS/assets/3116995/0b4aeb26-f91b-4e7f-90f8-1d742afaed9a
+mark dark: https://github.com/farmOS/farmOS/assets/3116995/741f302b-55f4-4404-91fa-b04c1e566f04
+mark yellow: https://github.com/farmOS/farmOS/assets/3116995/64fed65d-e1eb-4e0c-8526-10c560e18504
+mark red: https://github.com/farmOS/farmOS/assets/3116995/57486ab1-a749-4504-9cc0-7075325fd069
+mark green: https://github.com/farmOS/farmOS/assets/3116995/46b200a6-2510-48e1-9865-90e75c3a8f51
